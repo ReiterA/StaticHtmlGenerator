@@ -1,3 +1,4 @@
+
 class HTMLNode:
     def __init__(self, tag: str = None, value: str = None, children: list = None, props: dict = None):
         self.tag = tag
@@ -40,3 +41,4 @@ class ParentNode(HTMLNode):
 
         children_html = ''.join(child.to_html() for child in self.children)
         return f"<{self.tag}{self.props_to_html()}>{children_html}</{self.tag}>"
+
