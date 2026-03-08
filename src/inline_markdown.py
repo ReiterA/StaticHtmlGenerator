@@ -31,6 +31,13 @@ def extract_markdown_links(text):
     matches = re.findall(pattern, text)
     return matches
 
+def extract_title(markdown):
+    pattern = r"^# (.+)$"
+    match = re.search(pattern, markdown, re.MULTILINE)
+    if match:
+        return match.group(1).strip()
+    return None
+
 def split_nodes_image(old_nodes):
     pattern = r"!\[([^\[\]]*)\]\(([^\(\)]*)\)"
     new_nodes = []
